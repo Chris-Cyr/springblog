@@ -17,16 +17,16 @@ public class Ad {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String description;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "ad")
-    private List<AdImage> images;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "ad")
+//    private List<AdImage> images;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
 
-    @ManyToMany(mappedBy = "ads")
-    private List<AdCategory> categories;
+//    @ManyToMany(mappedBy = "ad")
+//    private List<AdCategory> categories;
 //    @ManyToMany(cascade = CascadeType.ALL)
 //    @JoinTable(
 //            name="ads_categories",
@@ -62,27 +62,11 @@ public class Ad {
         this.description = description;
     }
 
-    public List<AdImage> getImages() {
-        return images;
-    }
-
-    public void setImages(List<AdImage> images) {
-        this.images = images;
-    }
-
     public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public List<AdCategory> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(List<AdCategory> categories) {
-        this.categories = categories;
     }
 }
